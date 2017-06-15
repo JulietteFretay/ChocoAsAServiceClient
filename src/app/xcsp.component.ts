@@ -10,16 +10,16 @@ export class User {
 }
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
+  selector: 'xcsp',
+  templateUrl: './xcsp.component.html',
+  styleUrls: ['./xcsp.component.css'],
 })
-export class AppComponent {
+export class XcspComponent {
   title = 'Choco As A Service';
 
   serverUrl = 'http://localhost:4567';
 
-  problem;
+  problem ="";
   problemId;
 
   constructor(private http: Http,private router: Router) { }

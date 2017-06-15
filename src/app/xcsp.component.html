@@ -1,0 +1,12 @@
+<router-outlet>
+  <form enctype="multipart/form-data"  method="post" (submit)="loadProblem()">
+    <h2 for="problem">Fichier XCSP</h2><br/>
+    <textarea rows="20" cols="100" id="problem" name="problem" [(ngModel)]="problem"></textarea><br/>
+    <button type="submit" class="btn btn-primary">Valider</button>
+
+  </form>
+
+
+  <p class="alert alert-info" role="alert" *ngIf="((problemId))">ID du problème : {{problemId}}</p>
+
+</router-outlet>

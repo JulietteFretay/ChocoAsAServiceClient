@@ -1,0 +1,34 @@
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button"
+              class="navbar-toggle collapsed"
+              (click)="toggleMenu($event)">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a routerLink="/home" class="navbar-brand">Choco As A Service</a>
+    </div>
+    <div class="collapse navbar-collapse"
+         [ngClass]="{'in': menuIsOpen }">
+      <ul class="nav navbar-nav">
+        <li routerLinkActive="active">
+          <a routerLink="/personnel">About</a>
+        </li>
+        <li routerLinkActive="active">
+          <a routerLink="/projects">Contact</a>
+        </li>
+        <li class="dropdown"
+            [ngClass]="{'open': dropdownIsOpen }" (click)="toggleDropdown($event)" >
+          <a class="dropdown-toggle">Choco <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a>Website</a></li>
+            <li><a>GitHub</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

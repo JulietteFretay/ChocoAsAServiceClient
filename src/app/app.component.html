@@ -1,8 +1,3 @@
-<h1>{{title}}</h1>
-<form enctype="multipart/form-data"  method="post" (submit)="loadProblem()">
-  <label for="problem">Fichier XCSP</label><br/>
-  <textarea id="problem" name="problem" [(ngModel)]="problem"></textarea><br/>
-  <input type="submit"/>
-</form>
-<p *ngIf="((problemId))">ID du problème : {{problemId}}</p>
-
+<ct-navbar></ct-navbar>
+<br><br><br><br>
+<router-outlet></router-outlet>
