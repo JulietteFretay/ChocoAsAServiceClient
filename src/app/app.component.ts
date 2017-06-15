@@ -1,38 +1,45 @@
-import { Component } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
+import { HttpModule } from '@angular/http';
 
 export class User {
   id: number;
   name: string;
 }
 
-const USERS: User[] = [
-  { id: 11, name: 'Mr. Nice' },
-  { id: 12, name: 'Narco' },
-  { id: 13, name: 'Bombasto' },
-  { id: 14, name: 'Celeritas' },
-  { id: 15, name: 'Magneta' },
-  { id: 16, name: 'RubberMan' },
-  { id: 17, name: 'Dynama' },
-  { id: 18, name: 'Dr IQ' },
-  { id: 19, name: 'Magma' },
-  { id: 20, name: 'Tornado' }
-];
-
+@NgModule({
+  imports: [
+    HttpModule,
+  ],
+})
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  title = 'Choco As A Service Client !';
+  title = 'Choco As A Service';
 
-  users = USERS;
+  serverUrl = 'localhost:4567/';
 
-  selectedUser : User
+  problemFile;
+  problemId;
 
-  onSelect(user: User): void {
-    this.selectedUser = user;
+  submitProblem() {
+    if (this.problemFile) {
+      const reader = new FileReader();
+      reader.readAsText(this.problemFile);
+      reader.onload = function(){
+        return;
+      };
+    }
   }
+
+  loadFile(files) {
+    if (files) {
+      this.problemFile = files[0];
+    }
+  }
+
 }
 
 
