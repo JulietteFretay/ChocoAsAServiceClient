@@ -1,7 +1,7 @@
 <h1>{{title}}</h1>
-<form enctype="multipart/form-data"  method="post" (submit)="submitProblem()">
-  <label for="problem">Fichier XCSP</label>
-  <input type="file" #file (change)="loadFile(file.files)" id="problem" name="problem-file" accept="application/xml"/>
+<form enctype="multipart/form-data"  method="post" (submit)="loadProblem()">
+  <label for="problem">Fichier XCSP</label><br/>
+  <textarea id="problem" name="problem" [(ngModel)]="problem"></textarea><br/>
   <input type="submit"/>
 </form>
 <p *ngIf="((problemId))">ID du problème : {{problemId}}</p>
